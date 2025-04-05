@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple DSA Sign/Verify</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { background: #f9f9f9; padding: 20px; border-radius: 5px; }
+        h1 { color: #333; }
+        textarea { width: 100%; height: 100px; margin: 10px 0; }
+        button { background: #4CAF50; color: white; border: none; padding: 10px 15px; cursor: pointer; }
+        button:hover { background: #45a049; }
+        .section { margin-bottom: 30px; padding: 15px; background: white; border-radius: 5px; }
+        .signature { font-family: monospace; background: #eee; padding: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DSS</h1>
+        
+        <div class="section">
+            <h2>Sign a Message</h2>
+            <form action="/sign" method="POST">
+                <textarea name="message" placeholder="Enter message to sign"></textarea>
+                <button type="submit">Sign Message</button>
+            </form>
+        </div>
+        
+        <div class="section">
+            <h2>Verify a Signature</h2>
+            <form action="/verify" method="POST">
+                <textarea name="message" placeholder="Enter original message"></textarea>
+                <input type="text" name="r" placeholder="Signature r (hex)" style="width: 100%; margin: 5px 0; padding: 8px;">
+                <input type="text" name="s" placeholder="Signature s (hex)" style="width: 100%; margin: 5px 0; padding: 8px;">
+                <button type="submit">Verify Signature</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
